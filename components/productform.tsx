@@ -118,7 +118,7 @@ try {
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <SubmitButton title="Submit" loadingTitle="Saving Please wait..." loading={loading} className="w-full bg-slate-950 hover:bg-slate-700" loaderIcon = {Loader} buttonIcon = {Plus}/>
+          <SubmitButton title="Submit" loadingTitle="Saving Please Wait..." loading={loading} className="w-full bg-slate-950 hover:bg-slate-700" loaderIcon = {Loader} buttonIcon = {Plus}/>
         </motion.div>
       </form>
     </motion.div>
