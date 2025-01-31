@@ -36,17 +36,20 @@ export default function ProductForm() {
     data.price = Number(data.price)
     console.log(data)
 try {
+    setLoading(true)
     const response = await fetch(`${baseUrl}/api/v1/products`, {
         method : "POST",
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify(data)
     })
     if(response.ok){
+      setLoading(false)
         toast.success("created")
         console.log(response)
     }
 } catch (error) {
-    toast.error("failed")
+  setLoading(false)
+  toast.error("failed")
 }
     
   }
@@ -115,7 +118,7 @@ try {
         </motion.div>
 
         <motion.div variants={itemVariants}>
-          <SubmitButton title="Submit" loadingTitle="Saving Please wait..." loading={loading} className="w-full bg-slate-950" loaderIcon = {Loader} buttonIcon = {Plus}/>
+          <SubmitButton title="Submit" loadingTitle="Saving Please wait..." loading={loading} className="w-full bg-slate-950 hover:bg-slate-700" loaderIcon = {Loader} buttonIcon = {Plus}/>
         </motion.div>
       </form>
     </motion.div>
